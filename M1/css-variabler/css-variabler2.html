@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variabler</title>
+    <style>
+        /* 📌 Definiera variabler i :root så de gäller överallt */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --padding-size: 10px;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: var(--padding-size);
+        }
+
+        h1 {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Variabler</h1>
+    <p>Bakgrundsfärgen och textfärgen styrs av variabler!</p>
+
+</body>
+
+</html>

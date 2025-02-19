@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv Kortlayout med Container Queries</title>
+    <style>
+        /* 📌 Aktivera container queries */
+        .card-container {
+            container-type: inline-size;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* 📌 Grundläggande kortstil */
+        .card {
+            background-color: lightgray;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 🟢 Anpassa korten baserat på containerstorlek */
+        @container (min-width: 700px) {
+            .card {
+                background-color: lightcoral;
+                font-size: 18px;
+            }
+        }
+
+        @container (min-width: 900px) {
+            .card {
+                background-color: lightseagreen;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Container Queries: Kortlayout</h1>
+
+    <div class="card-container">
+        <div class="card">Kort 1</div>
+        <div class="card">Kort 2</div>
+        <div class="card">Kort 3</div>
+    </div>
+
+</body>
+
+</html>

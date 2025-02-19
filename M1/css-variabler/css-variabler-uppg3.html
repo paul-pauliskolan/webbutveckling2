@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variabler - Grid & Flexbox</title>
+    <style>
+        /* 📌 Definiera globala CSS-variabler */
+        :root {
+            --grid-gap: 20px;
+            --card-bg: #3498db;
+            --card-text: white;
+            --card-padding: 20px;
+        }
+
+        /* 📌 Grundläggande stil */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 📌 Grid-container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--grid-gap);
+            padding: 20px;
+        }
+
+        /* 📌 Kortstil */
+        .card {
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            padding: var(--card-padding);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* 📌 Media Query - Justera gap på större skärmar */
+        @media (min-width: 800px) {
+            :root {
+                --grid-gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grid-layout med CSS-variabler</h1>
+
+    <div class="grid-container">
+        <div class="card">Kort 1</div>
+        <div class="card">Kort 2</div>
+        <div class="card">Kort 3</div>
+        <div class="card">Kort 4</div>
+    </div>
+
+</body>
+
+</html>

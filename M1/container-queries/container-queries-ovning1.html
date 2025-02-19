@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testa Själv - Responsiv Navigering</title>
+    <style>
+        /* 📌 Aktivera container queries */
+        .menu-container {
+            container-type: inline-size;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /* Standard: staplade länkar */
+            gap: 10px;
+        }
+
+        .menu li {
+            text-align: center;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* 🟢 När menyns container är bredare än 600px → Gör menyn horisontell */
+        @container (min-width: 600px) {
+            .menu {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .menu a {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Testa Själv - Responsiv Navigering</h1>
+
+    <nav class="menu-container">
+        <ul class="menu">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Tjänster</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

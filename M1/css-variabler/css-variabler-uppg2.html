@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variabler - Mörkt och Ljust Tema</title>
+    <style>
+        /* 📌 Standardtema (Ljust tema) */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --btn-bg: #007bff;
+            --btn-text: white;
+        }
+
+        /* 📌 Mörkt tema */
+        .dark-theme {
+            --bg-color: #333;
+            --text-color: #ffffff;
+            --btn-bg: #ff9800;
+            --btn-text: black;
+        }
+
+        /* 📌 Grundläggande stil */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* 📌 Knappstil */
+        button {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Växla mellan ljust och mörkt tema</h1>
+    <button onclick="toggleTheme()">Byt tema</button>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+        }
+    </script>
+
+</body>
+
+</html>

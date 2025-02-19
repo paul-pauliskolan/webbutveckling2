@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Nesting - Responsiv Layout</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+
+            .item {
+                background: gray;
+                padding: 20px;
+                text-align: center;
+                color: white;
+                border-radius: 10px;
+
+                @media (max-width: 600px) {
+                    background: lightgray;
+                    color: black;
+                    grid-column: span 3;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+
+</body>
+
+</html>

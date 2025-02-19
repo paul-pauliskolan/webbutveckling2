@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orionalliansen - Gå med i föreningen</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Astronomiska föreningen Orionalliansen</h1>
+        </header>
+        <nav>
+            <a href="index.html">Välkommen</a>
+            <a href="join.html">Vill du gå med?</a>
+            <a href="gallery.html">Galleri</a>
+
+        </nav>
+        <main>
+            <!--     Kommentar i HTML -->
+            <h1>Gå med i astronomiska föreingen Orionalliansen </h1>
+            <form class="two-columns" action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend>Personlig information</legend>
+                    <!--    for..id -->
+                    <label for="firstname">*Förnamn</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Förnamn" required>
+                    <br>
+                    <!--    nästla input i label -->
+                    <label>*Efternamn<input type="text" name="lastname" placeholder="Efternamn" required></label>
+
+                    <br>
+                    Ålder <input type="number" name="age" min="0" max="120" step="1">
+                    <!--      min max step -->
+
+                    <br>
+                    <label for="email">*E-post</label>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <label for="password">Önskat lösenord<input type="password" name="password" id="password"></label>
+
+                    <br>
+                    <label for="birth-date">Födelsedag</label>
+                    <input type="date" name="birth-date" id="birth-date">
+                    <br>
+                </fieldset>
+                <fieldset>
+                    <legend>Frågor om astronomi</legend>
+                    <label>
+                        Favoritplanet
+                        <select name="planets" id="planets">
+                            <option value="mercury">Merkurius</option>
+                            <option value="venus">Venus</option>
+                            <option value="earth">Jorden</option>
+
+                            <option value="mars">Mars</option>
+                            <option value="jupiter">Jupiter</option>
+                            <option value="saturn">Saturnus</option>
+                            <option value="uranus">Uranus</option>
+                            <option value="neptune">Neptunus</option>
+                        </select>
+                    </label>
+
+
+                    <br>
+                    <input type="radio" name="gender" id="gender-male" value="male">
+                    <label for="gender-male">Man</label>
+                    <input type="radio" name="gender" id="gender-female" value="female">
+                    <label for="gender-female">Kvinna</label>
+                    <input type="radio" name="gender" id="gender-no" value="no">
+                    <label for="gender-no">Vill ej ange</label>
+
+                    <br>
+                    <p>Vilka astronomiska object hade du helst velat observera </p>
+
+                    <input type="checkbox" name="andromeda-galaxen" id="andromeda-galaxen" value="andromeda-galaxen">
+                    <label for="andromeda-galaxen">Andromeda galaxen</label>
+                    <input type="checkbox" name="Jupiter" id="jupiter" value="jupiter">
+                    <label for="jupiter">Jupiter</label>
+                    <input type="checkbox" name="orionnebulosan" id="orionnebulosan" value="orionnebulosan">
+                    <label for="orionnebulosan">Orionnebulosan</label>
+                    <br>
+                    Övrig information
+                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                    <br>
+                    <input type="submit" value="Skicka">
+
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <p>Astronomiska föreingen Orionalliansen | Stjärngatan 314 | 123 45 Galaxstad </p>
+
+        </footer>
+    </div>
+</body>
+
+</html>

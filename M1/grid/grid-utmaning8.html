@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid-spel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            /* Dynamisk layout */
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+            gap: 10px;
+            width: 50vw;
+            height: 50vw;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: #3498db;
+            border-radius: 10px;
+        }
+
+        /* 🎯 Gör en ruta dubbelt så bred */
+        .b {
+            grid-column: span 2;
+            background-color: #e74c3c;
+        }
+
+        /* 🏆 Skapa en spelplan med grid-template-areas */
+        .game-grid {
+            grid-template-areas:
+                "a b b"
+                "d e f"
+                "g h i";
+        }
+
+        /* Lägg till grid-areas */
+        .a {
+            grid-area: a;
+        }
+
+        .b {
+            grid-area: b;
+        }
+
+        .c {
+            grid-area: c;
+        }
+
+        .d {
+            grid-area: d;
+        }
+
+        .e {
+            grid-area: e;
+        }
+
+        .f {
+            grid-area: f;
+        }
+
+        .g {
+            grid-area: g;
+        }
+
+        .h {
+            grid-area: h;
+        }
+
+        .i {
+            grid-area: i;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game-grid">
+        <div class="cell a">A</div>
+        <div class="cell b">B</div>
+        <div class="cell c">C</div>
+        <div class="cell d">D</div>
+        <div class="cell e">E</div>
+        <div class="cell f">F</div>
+        <div class="cell g">G</div>
+        <div class="cell h">H</div>
+        <div class="cell i">I</div>
+    </div>
+</body>
+
+</html>

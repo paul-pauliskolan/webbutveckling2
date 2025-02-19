@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv Webbplats - Mörkt/Ljust Tema</title>
+    <style>
+        /* 📝 1. Ange CSS-variabler för att hantera färger och styling för både ljust och mörkt tema */
+        /* Exempel: 
+           :root {
+               --bg-color: #f4f4f4;
+               --text-color: #333;
+               --nav-bg: #3498db;
+           }
+        */
+
+        /* 📝 2. Skapa en klass för mörkt tema och definiera alternativa färger */
+        /* Exempel:
+           .dark-theme {
+               --bg-color: #1e1e1e;
+               --text-color: #f1f1f1;
+               --nav-bg: #2980b9;
+           }
+        */
+
+        /* 📝 3. Grundläggande styling för body:
+           - Ange standardfont (t.ex. Arial)
+           - Sätt bakgrundsfärg och textfärg från CSS-variablerna
+           - Lägg till en mjuk övergång mellan temaväxlingar (transition)
+        */
+
+        /* 📝 4. Skapa en navigeringsmeny med:
+           - En bakgrundsfärg från CSS-variabler
+           - Centrering av text
+           - Länkar som har rätt färg och avstånd
+        */
+
+        /* 📝 5. Skapa en layout med CSS Grid, där sidan delas in i två delar:
+           - En sidomeny (aside)
+           - Ett huvudinnehåll (main)
+           - Använd grid-template-columns: 1fr 3fr;
+           - Sätt gap och maxbredd på containern
+        */
+
+        /* 📝 6. Styling för aside:
+           - Bakgrundsfärg från variablerna
+           - Vit textfärg
+           - Inre marginaler (padding)
+           - Rundade hörn (border-radius)
+        */
+
+        /* 📝 7. Styling för main:
+           - Vit bakgrund
+           - Inre marginaler (padding)
+           - Rundade hörn
+        */
+
+        /* 📝 8. Styling för sidfoten (footer):
+           - Bakgrundsfärg
+           - Vit textfärg
+           - Centrering av text
+           - Inre marginaler (padding)
+        */
+
+        /* 📝 9. Skapa en knapp för att byta tema:
+           - Bakgrundsfärg från variablerna
+           - Textfärg
+           - Rundade hörn
+           - Förändring vid hover (exempel: ändra till en mörkare färg)
+        */
+
+        /* 📝 10. Lägg till en media query:
+           - Gör layouten responsiv så att den staplar sektionerna vid mindre skärmar
+           - Justera grid-template-columns till 1fr vid mindre skärmar
+        */
+    </style>
+</head>
+
+<body>
+
+    <!-- 📝 11. Skapa en navigeringsmeny med tre länkar -->
+    <nav>
+        <ul>
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- 📝 12. Skapa en behållare för sidlayouten -->
+    <div class="container">
+        <!-- 📝 13. Lägg till en sidomeny med en titel och en nyhet -->
+        <aside>
+            <h2>Senaste inlägg</h2>
+            <p>🎟️ Nytt event på gång!</p>
+        </aside>
+
+        <!-- 📝 14. Lägg till huvudinnehållet med en rubrik och en kort beskrivning -->
+        <main>
+            <h1>Välkommen till vår webbplats!</h1>
+            <p>Här hittar du de senaste uppdateringarna.</p>
+
+            <!-- 📝 15. Skapa en knapp för att växla mellan ljust och mörkt tema -->
+            <button class="theme-btn" onclick="toggleTheme()">Byt Tema</button>
+        </main>
+    </div>
+
+    <!-- 📝 16. Lägg till en sidfot med upphovsrättsinformation -->
+    <footer>
+        <p>&copy; 2024 Responsiv Webbplats</p>
+    </footer>
+
+    <!-- 📝 17. Lägg till JavaScript för att byta mellan mörkt och ljust tema -->
+    <script>
+        function toggleTheme() {
+            /* 📝 18. Lägg till en funktion som byter klass på body för att ändra temat */
+            document.body.classList.toggle("dark-theme");
+        }
+    </script>
+
+</body>
+
+</html>

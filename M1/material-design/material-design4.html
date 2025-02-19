@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design - Knapp</title>
+    <!-- Google Fonts (Material Icons) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Knapp för att öppna modal -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#demo-modal">Öppna Modal</a>
+
+    <!-- Modal-struktur -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <h4>Modal Titel</h4>
+            <p>Detta är en enkel modal i Materialize CSS.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn red">Stäng</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            M.Modal.init(elems);
+        });
+    </script>
+
+
+</body>
+
+</html>

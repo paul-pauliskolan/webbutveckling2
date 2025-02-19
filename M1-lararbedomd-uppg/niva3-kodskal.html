@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiv Webbplats</title>
+
+    <!-- 📝 1. Lägg till externa CSS-ramverk (t.ex. Tailwind och Materialize) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        /* 📝 2. Definiera CSS-variabler för färger och text */
+        /* Exempel: 
+           :root {
+               --primary-color: #3498db;
+               --secondary-color: #2ecc71;
+               --text-color: #333;
+           }
+        */
+
+        /* 📝 3. Grundläggande styling för body:
+           - Sätt font till Arial
+           - Använd CSS-variabler för bakgrunds- och textfärg
+           - Ta bort margin och padding
+        */
+
+        /* 📝 4. Skapa en navigationsmeny med:
+           - En bakgrundsfärg
+           - Fixerad position högst upp på sidan
+           - Flexbox för att centrera länkarna
+           - Rätt padding och höjd
+        */
+
+        /* 📝 5. Styling för menyns länkar:
+           - Vit text
+           - Ingen understrykning
+           - Lämpligt avstånd mellan länkarna
+        */
+
+        /* 📝 6. Skapa en container med CSS Grid:
+           - Dela sidan i två kolumner (1fr 3fr)
+           - Lägg till en buffert under menyn med padding-top
+           - Maxbredd på 1000px
+           - Centrera layouten horisontellt
+        */
+
+        /* 📝 7. Skapa en kortcontainer med flexbox:
+           - Gör att korten radbryts om de inte får plats
+           - Justera gap mellan korten
+        */
+
+        /* 📝 8. Styling för kort:
+           - Vit bakgrund
+           - Rundade hörn
+           - Padding och textcentrering
+           - Sätt en minsta bredd
+        */
+
+        /* 📝 9. Styling för temaknappen:
+           - Använd secondary-color som bakgrund
+           - Vit text
+           - Rundade hörn och padding
+           - Ändra färg vid hover
+        */
+
+        /* 📝 10. Lägg till en media query:
+           - Ändra layouten för mobil (grid-template-columns till 1fr)
+           - Gör korten mer centrerade
+           - Justera menyn vid små skärmar
+        */
+    </style>
+</head>
+
+<body>
+
+    <!-- 📝 11. Skapa en navigationsmeny -->
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- 📝 12. Skapa en behållare för layouten -->
+    <div class="container">
+        <!-- 📝 13. Lägg till en sidomeny med en titel och ett inlägg -->
+        <aside>
+            <h2>Senaste inlägg</h2>
+            <p>🎟️ Nytt event på gång!</p>
+        </aside>
+
+        <!-- 📝 14. Lägg till huvudinnehållet -->
+        <main>
+            <h1>Välkommen till vår webbplats!</h1>
+            <p>Här hittar du de senaste uppdateringarna.</p>
+
+            <!-- 📝 15. Skapa en kortcontainer -->
+            <div class="card-container">
+                <div class="card">Kort 1</div>
+                <div class="card">Kort 2</div>
+                <div class="card">Kort 3</div>
+            </div>
+
+            <!-- 📝 16. Skapa en knapp för att växla tema -->
+            <button class="toggle-theme" onclick="toggleTheme()">Byt Tema</button>
+        </main>
+    </div>
+
+    <!-- 📝 17. Lägg till en sidfot -->
+    <footer>
+        <p>&copy; 2024 Interaktiv Webbplats</p>
+    </footer>
+
+    <!-- 📝 18. Skapa JavaScript-funktionen för att byta tema -->
+    <script>
+        function toggleTheme() {
+            /* 📝 19. Byt färger genom att manipulera CSS-variablerna */
+            let root = document.documentElement;
+            let isDark = root.style.getPropertyValue("--primary-color") === "#333";
+
+            if (isDark) {
+                root.style.setProperty("--primary-color", "#3498db");
+                root.style.setProperty("--secondary-color", "#2ecc71");
+                root.style.setProperty("--text-color", "#333");
+            } else {
+                root.style.setProperty("--primary-color", "#333");
+                root.style.setProperty("--secondary-color", "#555");
+                root.style.setProperty("--text-color", "#fff");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

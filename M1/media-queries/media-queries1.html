@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries - Bakgrundsfärg</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            /* Standardfärg */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.5s ease-in-out;
+            /* Smidig övergång */
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-color: lightblue;
+                /* Blå bakgrund vid små skärmar */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                background-color: lightpink;
+                /* Rosa bakgrund vid breda skärmar */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Media Queries - Ändrar bakgrundsfärg</h1>
+    <p>Förminska eller förstora webbläsaren för att se färgändringen!</p>
+</body>
+
+</html>

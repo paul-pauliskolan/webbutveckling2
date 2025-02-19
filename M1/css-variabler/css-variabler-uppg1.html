@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variabler - Knapp</title>
+    <style>
+        /* 📌 Definiera globala CSS-variabler */
+        :root {
+            --btn-bg: #3498db;
+            --btn-text: white;
+            --btn-padding: 10px 20px;
+            --btn-radius: 5px;
+        }
+
+        /* 📌 Knappens stil */
+        .button {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            padding: var(--btn-padding);
+            border: none;
+            border-radius: var(--btn-radius);
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* 📌 Hover-effekt */
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Knapp med CSS-variabler</h1>
+    <button class="button">Klicka här</button>
+
+</body>
+
+</html>

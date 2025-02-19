@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgift 3 - Enkel räknare</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #counter {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Räknare</h1>
+    <p id="counter">0</p>
+    <button onclick="ökaRäknare()">Öka</button>
+
+    <script>
+        let räknare = 0; // Startvärde
+
+        function ökaRäknare() {
+            räknare++; // Öka räknaren med 1
+            document.getElementById("counter").innerText = räknare; // Uppdatera HTML
+        }
+    </script>
+
+</body>
+
+</html>

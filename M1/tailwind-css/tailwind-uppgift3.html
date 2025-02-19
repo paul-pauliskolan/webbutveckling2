@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgift 3 - Interaktiv meny</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-10">
+
+    <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Interaktiv meny</h1>
+
+        <button onclick="toggleMenu()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+            Visa/Dölj Meny
+        </button>
+
+        <div id="menu" class="hidden mt-4 bg-gray-200 p-4 rounded">
+            <ul class="list-disc pl-5">
+                <li class="text-gray-800">Hem</li>
+                <li class="text-gray-800">Om oss</li>
+                <li class="text-gray-800">Tjänster</li>
+                <li class="text-gray-800">Kontakt</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+
+</html>

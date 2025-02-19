@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Nesting - Kortlayout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+
+            .card {
+                background: lightgray;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: lightblue;
+                }
+
+                @media (max-width: 600px) {
+                    grid-column: span 3;
+                    background: lightcoral;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="card">Kort 1</div>
+        <div class="card">Kort 2</div>
+        <div class="card">Kort 3</div>
+    </div>
+
+</body>
+
+</html>

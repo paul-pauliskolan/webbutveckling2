@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Container Queries</title>
+    <style>
+        /* 📌 Definiera en container */
+        .card-container {
+            container-type: inline-size;
+            /* Aktiverar container queries */
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            border: 2px solid black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 📌 Kortets grundstil */
+        .card {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* 🟢 Använd en container query istället för media query */
+        @container (min-width: 600px) {
+            .card {
+                font-size: 20px;
+                /* Öka textstorleken om container är bredare än 600px */
+                background-color: lightgreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Container Queries Exempel</h1>
+
+    <div class="card-container">
+        <div class="card">Jag ändrar färg och storlek beroende på min förälder!</div>
+        <div class="card">Testa att justera fönsterbredden.</div>
+    </div>
+
+</body>
+
+</html>

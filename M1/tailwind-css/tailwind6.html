@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind - Interaktiv meny</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-10">
+
+    <button onclick="toggleMenu()" class="bg-green-500 text-white px-4 py-2 rounded">
+        Visa meny
+    </button>
+
+    <div id="menu" class="hidden bg-gray-100 p-4 mt-2">
+        <p>Här är menyn!</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+
+</html>

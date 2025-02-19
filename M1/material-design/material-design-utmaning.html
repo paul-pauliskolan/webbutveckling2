@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utmaning - Stängbar meny</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body class="container">
+
+    <!-- Knapp för att öppna menyn -->
+    <a class="waves-effect waves-light btn blue sidenav-trigger" data-target="menu">
+        <i class="material-icons left">menu</i>Öppna meny
+    </a>
+
+    <!-- Sidomeny -->
+    <ul id="menu" class="sidenav">
+        <li><a href="#" class="sidenav-close">Hem</a></li>
+        <li><a href="#" class="sidenav-close">Om oss</a></li>
+        <li><a href="#" class="sidenav-close">Tjänster</a></li>
+        <li><a href="#" class="sidenav-close">Kontakt</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <!-- Stäng-knapp -->
+        <li><a href="#" class="sidenav-close red-text"><i class="material-icons">close</i> Stäng meny</a></li>
+    </ul>
+
+    <!-- JavaScript för att initiera menyn -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+
+</body>
+
+</html>

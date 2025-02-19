@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            /*        flex-direction: row-reverse; */
+            justify-content: space-evenly;
+            /* Testa med start, end, space-between, space-around, space-evenly, center  */
+            align-items: center;
+            /* Testa med stretch, start, end, center */
+            background-color: lightgray;
+            height: 200px;
+            padding: 10px;
+            /*  flex-wrap: wrap; */
+            /*   gap: 20px; */
+        }
+
+        .item {
+            background-color: lightblue;
+            flex-grow: 1;
+            padding: 20px;
+            margin: 5px;
+            border: 2px solid blue;
+        }
+
+        .item2 {
+            background-color: lightgreen;
+            /* flex-grow: 2; */
+            /*   flex-basis: 100px; */
+            padding: 20px;
+            margin: 5px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item2">A</div>
+
+    </div>
+
+</body>
+
+</html>

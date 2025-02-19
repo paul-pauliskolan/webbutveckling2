@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Grundlayout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* Standard: Stapla elementen */
+            gap: 10px;
+            padding: 20px;
+        }
+
+        /* Styling av boxarna */
+        .box {
+            background: lightblue;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        /* Media Query för bredare skärmar */
+        @media (min-width: 700px) {
+            .container {
+                flex-direction: row;
+                /* Ändrar till radlayout vid bredare skärmar */
+                justify-content: center;
+            }
+
+            .box {
+                width: 300px;
+                /* Ger boxarna fast bredd */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Responsiv Design</h1>
+
+    <div class="container">
+        <section class="box">📱 Mobilanpassad</section>
+        <section class="box">💻 Desktopanpassad</section>
+    </div>
+
+</body>
+
+</html>

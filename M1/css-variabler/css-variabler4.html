@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tema med Variabler</title>
+    <style>
+        :root {
+            --button-bg: blue;
+            --button-text: white;
+        }
+
+        .special {
+            --button-bg: red;
+            --button-text: yellow;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Växla mellan ljust och mörkt tema</h1>
+    <button>Button</button>
+    <button class=" special">Button special</button>
+
+
+
+</body>
+
+</html>

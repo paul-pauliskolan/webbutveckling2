@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testa Själv - Media & Container Queries</title>
+    <style>
+        /* 📌 Bakgrundsfärg ändras beroende på webbläsarfönstrets storlek */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-color: lightgray;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1200px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+
+        /* 📌 Kortlayout med Container Queries */
+        .card-container {
+            container-type: inline-size;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 🟢 Container Query för att ändra kortens utseende */
+        @container (min-width: 700px) {
+            .card {
+                background-color: lightcoral;
+                font-size: 18px;
+            }
+        }
+
+        @container (min-width: 900px) {
+            .card {
+                background-color: lightseagreen;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Testa Själv - Media & Container Queries</h1>
+
+    <div class="card-container">
+        <div class="card">Kort 1</div>
+        <div class="card">Kort 2</div>
+        <div class="card">Kort 3</div>
+    </div>
+
+</body>
+
+</html>

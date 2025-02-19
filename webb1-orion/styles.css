@@ -1,0 +1,125 @@
+body {
+  background-color: #000;
+  color: #b3e3f8;
+  font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium",
+    "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+  font-weight: normal;
+  /*   font-size: 1.2rem; */
+  /* font-size: 2rem; */
+}
+
+.container {
+  margin: 10px 5vw;
+}
+
+.two-columns {
+  display: flex;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+p {
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  /*   font-size: 2rem; */
+}
+
+img {
+  display: inline;
+  width: 20vw;
+}
+
+.center-img {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #3bbaf0;
+}
+
+/*Gallery start*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.gallery-item {
+  width: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*Gallery end*/
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/*Menu links start */
+nav a {
+  padding: 5px 19px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  background-color: #b3e3f8;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background-color: #ebf9ff;
+  color: black;
+}
+
+nav a:active {
+  background-color: #3b4a51;
+  color: #ebf9ff;
+}
+/*Menu links end */
+
+/* text links start*/
+article a {
+  color: #3bbaf0;
+  text-decoration: none;
+}
+
+article a:hover {
+  color: #3bbaf0;
+  text-decoration: underline;
+}
+
+article a:active {
+  color: #3b4a51;
+  text-decoration: underline;
+}
+/* text links end*/
+
+/* Two columns start*/
+@media (max-width: 700px) {
+  .two-columns {
+    flex-direction: column;
+  }
+  img {
+    display: inline;
+    width: 30vw;
+  }
+}
+/* Two columns end*/

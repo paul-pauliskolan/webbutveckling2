@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries - Anpassad text</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            /* Standardstorlek */
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 18px;
+                /* Mindre text på små skärmar */
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 36px;
+                /* Större text på breda skärmar */
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Media Queries - Ändrad textstorlek</h1>
+    <p>Förminska eller förstora webbläsaren för att se hur texten förändras.</p>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Nesting - Navigation</title>
+    <style>
+        nav {
+            background: #222;
+            padding: 10px;
+
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 15px;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 10px;
+
+                        &:hover {
+                            color: yellow;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Tjänster</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En responsiv webbplats som anpassar sig efter skärmstorleken.">
+    <title>Responsiv Webbplats</title>
+    <style>
+        /* Grundläggande styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigationsmeny */
+        nav {
+            background: #004674;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Layout med CSS Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Sidomeny */
+        aside {
+            background: #14562f;
+            padding: 15px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Huvudinnehåll */
+        main {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Media Queries för responsiv design */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                /* Stapla sektionerna vertikalt */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigeringsmeny -->
+    <nav>
+        <ul>
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Huvudinnehåll och sidomeny -->
+    <div class="container">
+        <aside>
+            <h2>Senaste inlägg</h2>
+            <p>🎟️ Nytt event på gång!</p>
+        </aside>
+
+        <main>
+            <h1>Välkommen till vår webbplats!</h1>
+            <p>Här hittar du de senaste uppdateringarna.</p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Responsiv Webbplats</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv Kortlayout</title>
+    <style>
+        /* Grundläggande styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Kortlayout */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #007bff;
+        }
+
+        /* Media Query för större skärmar */
+        @media (min-width: 600px) {
+            .card-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .card {
+                width: 30%;
+            }
+
+            body {
+                background-color: #e3f2fd;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            body {
+                background-color: #d1f0d1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Responsiv Kortlayout</h1>
+
+    <div class="card-container">
+        <div class="card">
+            <h2>Kort 1</h2>
+            <p>Detta är det första kortet. Det innehåller lite information.</p>
+        </div>
+        <div class="card">
+            <h2>Kort 2</h2>
+            <p>Detta är det andra kortet. Det är responsivt och anpassar sig!</p>
+        </div>
+        <div class="card">
+            <h2>Kort 3</h2>
+            <p>Detta är det tredje kortet. Testa att ändra skärmstorlek!</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

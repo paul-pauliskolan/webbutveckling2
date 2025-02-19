@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utmaning - Räknare med öka och minska</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #counter {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .increase {
+            background-color: green;
+            color: white;
+        }
+
+        .decrease {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Interaktiv Räknare</h1>
+    <p id="counter">0</p>
+    <button class="increase" onclick="ökaRäknare()">Öka</button>
+    <button class="decrease" onclick="minskaRäknare()">Minska</button>
+
+    <script>
+        let räknare = 0; // Startvärde
+
+        function uppdateraRäknare() {
+            document.getElementById("counter").innerText = räknare; // Uppdatera HTML
+        }
+
+        function ökaRäknare() {
+            räknare++; // Öka räknaren med 1
+            uppdateraRäknare();
+        }
+
+        function minskaRäknare() {
+            räknare--; // Minska räknaren med 1
+            uppdateraRäknare();
+        }
+    </script>
+
+</body>
+
+</html>
