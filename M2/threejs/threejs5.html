@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js - 3D-kub med ljus</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // Skapa scen, kamera och renderare
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Skapa en kub
+        const geometry = new THREE.BoxGeometry(1, 1, 1); // Skapa en kub
+        const texture = new THREE.TextureLoader().load('https://picsum.photos/200'); // Ladda textur
+        const material = new THREE.MeshBasicMaterial({ map: texture }); // Skapa material med textur
+        const cube = new THREE.Mesh(geometry, material); // Koppla samman geometrin och materialet
+        scene.add(cube); // Lägg till kuben i scenen
+
+
+        // Lägg till ljus
+        const light = new THREE.PointLight(0xffffff, 1, 100); // Vitt ljus med intensitet 1 och räckvidd 100
+        light.position.set(10, 10, 10); // Placera ljuset i scenen
+        scene.add(light); // Lägg till ljuset i scenen
+
+        // Placera kameran
+        camera.position.z = 5;
+
+        // Animation-loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotera kuben
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+
+</html>

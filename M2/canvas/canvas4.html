@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Linje</title>
+</head>
+
+<body>
+    <canvas id="minCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+
+    <script>
+        let canvas = document.getElementById("minCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(50, 50); // Startpunkt
+        ctx.lineTo(150, 100); // Slutpunkt
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.closePath();
+    </script>
+</body>
+
+</html>

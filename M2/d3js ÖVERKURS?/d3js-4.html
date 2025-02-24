@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stapeldiagram med D3.js</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        rect {
+            stroke: black;
+            stroke-width: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="400" height="200"></svg>
+
+    <script>
+        const data = [10, 40, 30, 20, 50]; // Dataset
+
+        const svg = d3.select("svg");
+
+        svg.selectAll("rect") // Skapar flera rektanglar
+            .data(data) // Kopplar data till rektanglarna
+            .enter() // Skapar element för varje datapunkt
+            .append("rect") // Lägger till rektanglar i SVG
+            .attr("x", (d, i) => i * 50 + 10) // Placering i x-led
+            .attr("y", d => 200 - d * 3) // Placering i y-led (vända så att staplarna ritas från botten)
+            .attr("width", 40) // Bredd på staplar
+            .attr("height", d => d * 3) // Höjd baserat på data
+            .attr("fill", "orange"); // Stapelfärg
+
+
+    </script>
+</body>
+
+</html>

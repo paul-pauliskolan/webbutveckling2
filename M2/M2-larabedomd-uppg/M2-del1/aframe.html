@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Frame Demo</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <style>
+        /* Se till att menyn alltid är synlig */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+            /* Se till att menyn ligger över A-Frame */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Justera scenen så att den inte täcker menyn */
+        a-scene {
+            position: absolute;
+            top: 50px;
+            /* Skjuter ner scenen under menyn */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px);
+            /* Så att den fyller resten av sidan */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔹 Fast meny som alltid är synlig -->
+    <nav>
+        <a href="bild.html">Bild</a> | <a href="bakgrund.html">Bakgrund</a> | <a href="ljud.html">Ljud</a> |
+        <a href="video.html">Video</a> | <a href="bakgrundsvideo.html">Bakgrundsvideo</a> |
+        <a href="canvas.html">Canvas</a> | <a href="three.html">Three.js</a> | <a href="aframe.html">A-Frame</a>
+    </nav>
+
+    <!-- A-Frame scen -->
+    <a-scene>
+        <!-- Bakgrundsfärg -->
+        <a-sky color="#87CEEB"></a-sky>
+
+        <!-- En roterande kub med textur -->
+        <a-box position="0 1 -3" material="src: https://picsum.photos/200"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+        </a-box>
+
+        <!-- En sfär bredvid kuben -->
+        <a-sphere position="2 1 -3" radius="0.8" color="red"
+            animation="property: rotation; to: 360 0 0; loop: true; dur: 4000">
+        </a-sphere>
+
+        <!-- Plan yta som mark -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="green"></a-plane>
+
+        <!-- Kamera och kontroller -->
+        <a-camera position="0 1.6 0">
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <!-- Text som visas i scenen -->
+        <a-text value="Min A-Frame Scen!" position="-1 2 -3" color="black"></a-text>
+    </a-scene>
+
+</body>
+
+</html>

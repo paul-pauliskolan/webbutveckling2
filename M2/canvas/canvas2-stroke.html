@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Kantad Rektangel</title>
+</head>
+
+<body>
+    <canvas id="minCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+
+    <script>
+        let canvas = document.getElementById("minCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.strokeStyle = "red"; // Kantfärg
+        ctx.lineWidth = 3;
+        ctx.strokeRect(200, 50, 100, 50); // x, y, bredd, höjd
+    </script>
+</body>
+
+</html>

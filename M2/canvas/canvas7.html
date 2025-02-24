@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Rensa</title>
+</head>
+
+<body>
+    <canvas id="minCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+    <button onclick="clearCanvas()">Rensa</button>
+
+    <script>
+        let canvas = document.getElementById("minCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 100, 50);
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+
+</html>

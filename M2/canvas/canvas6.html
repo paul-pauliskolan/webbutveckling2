@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Bild</title>
+</head>
+
+<body>
+    <canvas id="minCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+
+    <script>
+        let canvas = document.getElementById("minCanvas");
+        let ctx = canvas.getContext("2d");
+
+        let img = new Image();
+        img.src = "https://picsum.photos/200/100?random=1"; // Exempelbild
+        img.onload = function () {
+            ctx.drawImage(img, 100, 50, 200, 100); // x, y, bredd, höjd
+        };
+    </script>
+</body>
+
+</html>
