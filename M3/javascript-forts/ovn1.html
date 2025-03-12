@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisk DOM - Ta bort rutor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="läggTill">Lägg till ruta</button>
+    <button id="taBort">Ta bort alla rutor</button>
+    <div id="container"></div>
+
+    <script>
+        document.getElementById("läggTill").addEventListener("click", function() {
+            let nyRuta = document.createElement("div");
+            nyRuta.className = "box";
+            nyRuta.innerText = "Ny ruta";
+            document.getElementById("container").appendChild(nyRuta);
+        });
+
+        document.getElementById("taBort").addEventListener("click", function() {
+            document.getElementById("container").innerHTML = ""; // Tar bort alla rutor
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <input type="text" id="namn" placeholder="Skriv ditt namn">
+    <button onclick="sparaNamn()">Spara</button>
+    <p id="hälsning"></p>
+
+    <script>
+        function sparaNamn() {
+            let namn = document.getElementById("namn").value;
+            localStorage.setItem("användarnamn", namn);
+            visaHälsning();
+        }
+
+        function visaHälsning() {
+            let sparatNamn = localStorage.getItem("användarnamn");
+            if (sparatNamn) {
+                document.getElementById("hälsning").innerText = "Välkommen tillbaka, " + sparatNamn + "!";
+            }
+        }
+
+        visaHälsning();
+    </script>
+</body>
+</html>

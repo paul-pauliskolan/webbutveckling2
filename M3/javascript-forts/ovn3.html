@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Återställ ruta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="changeBox">Ändra ruta</button>
+    <button id="resetBox">Återställ ruta</button>
+    <div id="box" class="box">Ruta</div>
+
+    <script>
+        // Hämta HTML-element
+        let box = document.getElementById("box");
+        let changeButton = document.getElementById("changeBox");
+        let resetButton = document.getElementById("resetBox");
+
+        // Spara originalstil för att kunna återställa senare
+        const originalStyles = {
+            width: box.style.width,
+            height: box.style.height,
+            backgroundColor: box.style.backgroundColor
+        };
+
+        // Funktion för att ändra ruta
+        changeButton.addEventListener("click", function() {
+            box.style.width = "150px"; 
+            box.style.height = "150px"; 
+            box.style.backgroundColor = "red";
+        });
+
+        // Funktion för att återställa ruta till ursprunglig stil
+        resetButton.addEventListener("click", function() {
+            box.style.width = "100px"; 
+            box.style.height = "100px"; 
+            box.style.backgroundColor = "lightblue";
+        });
+    </script>
+
+</body>
+</html>

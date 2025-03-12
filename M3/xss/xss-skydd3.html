@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Säker sida med CSP</title>
+
+    <!-- 🔒 Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+</head>
+
+<body>
+
+    <h2>Säker inmatning</h2>
+    <input type="text" id="userInput" placeholder="Skriv något">
+    <button onclick="submitInput()">Skicka</button>
+    <p id="output"></p>
+
+    <script>
+        function submitInput() {
+            let userInput = document.getElementById("userInput").value;
+            document.getElementById("output").textContent = userInput; // ✅ Säkert: Ingen XSS-exekvering!
+        }
+    </script>
+
+</body>
+
+</html>

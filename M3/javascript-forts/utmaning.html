@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgiftshanterare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 70%;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            background: #e0e0e0;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Uppgiftshanterare</h2>
+        
+        <!-- Inputfält och knappar -->
+        <input type="text" id="taskInput" placeholder="Skriv en uppgift">
+        <button onclick="addTask()">Lägg till</button>
+        <button onclick="sortTasks()">Sortera</button>
+
+        <!-- Lista där uppgifter visas -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // Hämta uppgifter från LocalStorage vid sidladdning
+        document.addEventListener("DOMContentLoaded", loadTasks);
+
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Du måste skriva något!");
+                return;
+            }
+
+            let taskList = document.getElementById("taskList");
+
+            // Skapa ett nytt listelement (li)
+            let li = document.createElement("li");
+            li.innerHTML = `
+                <span>${taskText}</span>
+                <button onclick="toggleComplete(this)">✅</button>
+                <button onclick="deleteTask(this)">🗑</button>
+            `;
+
+            taskList.appendChild(li);
+            saveTasks(); // Spara i LocalStorage
+            taskInput.value = "";
+        }
+
+        function toggleComplete(button) {
+            let taskItem = button.parentElement;
+            taskItem.classList.toggle("completed");
+            saveTasks(); // Uppdatera LocalStorage
+        }
+
+        function deleteTask(button) {
+            let taskItem = button.parentElement;
+            taskItem.remove();
+            saveTasks(); // Uppdatera LocalStorage
+        }
+
+        function saveTasks() {
+            let tasks = [];
+            document.querySelectorAll("#taskList li").forEach(task => {
+                tasks.push({
+                    text: task.querySelector("span").innerText,
+                    completed: task.classList.contains("completed")
+                });
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            let taskList = document.getElementById("taskList");
+
+            tasks.forEach(task => {
+                let li = document.createElement("li");
+                li.innerHTML = `
+                    <span>${task.text}</span>
+                    <button onclick="toggleComplete(this)">✅</button>
+                    <button onclick="deleteTask(this)">🗑</button>
+                `;
+                if (task.completed) {
+                    li.classList.add("completed");
+                }
+                taskList.appendChild(li);
+            });
+        }
+
+        function sortTasks() {
+            let taskList = document.getElementById("taskList");
+            let tasks = Array.from(taskList.children);
+
+            tasks.sort((a, b) => {
+                let taskA = a.querySelector("span").innerText.toLowerCase();
+                let taskB = b.querySelector("span").innerText.toLowerCase();
+                return taskA.localeCompare(taskB);
+            });
+
+            taskList.innerHTML = ""; // Rensa listan
+            tasks.forEach(task => taskList.appendChild(task));
+
+            saveTasks(); // Uppdatera LocalStorage
+        }
+    </script>
+
+</body>
+</html>

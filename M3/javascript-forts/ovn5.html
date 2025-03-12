@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spara och radera namn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #savedName {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Namnhantering med LocalStorage</h2>
+    
+    <!-- Fält för inmatning av namn -->
+    <input type="text" id="nameInput" placeholder="Skriv ditt namn">
+    
+    <!-- Knapp för att spara namnet -->
+    <button onclick="saveName()">Spara Namn</button>
+    
+    <!-- Knapp för att radera det sparade namnet -->
+    <button onclick="deleteName()">Radera Namn</button>
+    
+    <!-- Plats för att visa det sparade namnet -->
+    <p id="savedName"></p>
+
+    <script>
+        // Funktion för att spara namnet i LocalStorage
+        function saveName() {
+            let name = document.getElementById("nameInput").value;
+            if (name) {
+                localStorage.setItem("username", name);
+                document.getElementById("savedName").innerText = "Sparat namn: " + name;
+            } else {
+                alert("Vänligen skriv in ett namn innan du sparar.");
+            }
+        }
+
+        // Funktion för att radera namnet från LocalStorage
+        function deleteName() {
+            localStorage.removeItem("username"); // Tar bort lagrade värdet
+            document.getElementById("savedName").innerText = "Namnet har raderats!";
+        }
+
+        // Kontrollera om ett namn redan är sparat när sidan laddas
+        window.onload = function () {
+            let storedName = localStorage.getItem("username");
+            if (storedName) {
+                document.getElementById("savedName").innerText = "Sparat namn: " + storedName;
+            }
+        };
+    </script>
+
+</body>
+</html>

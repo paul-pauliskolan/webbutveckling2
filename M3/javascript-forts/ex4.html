@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+        img { display: block; margin: 20px auto; max-width: 100%; }
+    </style>
+</head>
+<body>
+    <button id="hämtaBild">Hämta bild</button>
+    <img id="bild" src="" alt="Slumpmässig bild">
+
+    <script>
+        document.getElementById("hämtaBild").addEventListener("click", async function() {
+            let respons = await fetch("https://picsum.photos/300");
+            document.getElementById("bild").src = respons.url;
+        });
+    </script>
+</body>
+</html>

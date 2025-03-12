@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa bildens URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bild -->
+    <img id="myImage" src="https://picsum.photos/300" alt="Slumpmässig bild">
+
+    <!-- Plats för att visa bildens URL -->
+    <p id="imageURL"></p>
+    <button onclick="updateImage()">Ladda ny bild</button>
+    <script>
+        // Hämta bild och textfält
+        let imageElement = document.getElementById("myImage");
+        let urlText = document.getElementById("imageURL");
+
+        // Visa bildens URL under bilden
+        urlText.innerText = "Bildens URL: " + imageElement.src;
+
+        function updateImage() {
+    let randomImageURL = "https://picsum.photos/300?" + new Date().getTime();
+    imageElement.src = randomImageURL;
+    urlText.innerText = "Bildens URL: " + randomImageURL;
+}
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisk DOM</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="läggTill">Lägg till ruta</button>
+    <div id="container"></div>
+
+    <script>
+        document.getElementById("läggTill").addEventListener("click", function() {
+            let nyRuta = document.createElement("div");
+            nyRuta.className = "box";
+            nyRuta.innerText = "Ny ruta";
+            document.getElementById("container").appendChild(nyRuta);
+        });
+    </script>
+</body>
+</html>

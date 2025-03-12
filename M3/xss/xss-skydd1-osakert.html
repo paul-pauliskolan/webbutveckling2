@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osäker XSS-sårbar webbplats</title>
+</head>
+
+<body>
+
+    <h2>Osäker inmatning</h2>
+    <input type="text" id="userInput" placeholder="Skriv något">
+    <button onclick="submitInput()">Skicka</button>
+    <p id="output"></p>
+
+    <script>
+        function submitInput() {
+            let userInput = document.getElementById("userInput").value;
+            document.getElementById("output").innerHTML = userInput; // ❌ Farligt!
+        }
+    </script>
+
+</body>
+
+</html>

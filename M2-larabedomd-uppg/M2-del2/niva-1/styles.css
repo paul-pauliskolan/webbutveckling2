@@ -1,0 +1,33 @@
+/* Webbsäkra typsnitt och grundläggande styling */
+body {
+    font-family: Arial, sans-serif; /* Webbsäkert typsnitt */
+    font-size: 18px; /* Rekommenderad textstorlek */
+    line-height: 1.5; /* Radavstånd */
+    background-color: #f4f4f4; /* Bakgrundsfärg */
+    color: #333; /* Textfärg */
+    margin: 10px;
+    padding: 0;
+}
+
+/* Styling av huvudrubrik */
+h1 {
+    color: #222;
+    text-align: center;
+}
+
+/* Styling av bild */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styling av sidfot */
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
