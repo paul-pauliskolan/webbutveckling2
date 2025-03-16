@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avancerad interaktiv webbsida – Nivå 3</title>
+    <style>
+        /* Grundläggande stil och layout */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        /* Anpassad fokusmarkering för tangentbordsnavigering */
+        button:focus,
+        input:focus {
+            outline: 3px dashed orange;
+        }
+
+        /* Stil för rutor som skapas dynamiskt */
+        .ruta {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+
+        /* Media query – mobilanpassning */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .ruta {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Sidans rubrik -->
+        <h1>Avancerad interaktiv webbsida</h1>
+    </header>
+
+    <main>
+        <!-- Sektion 1: Skapa och rensa rutor -->
+        <section aria-labelledby="rutaRubrik">
+            <h2 id="rutaRubrik">Skapa rutor</h2>
+            <!-- Knapp för att skapa ruta – lägg till id, aria-label -->
+            <!-- Knapp för att rensa rutor – lägg till id, aria-label -->
+            <!-- Div för att visa rutor – lägg till id -->
+        </section>
+
+        <!-- Sektion 2: Spara och visa namn med LocalStorage -->
+        <section aria-labelledby="namnRubrik">
+            <h2 id="namnRubrik">Spara namn</h2>
+            <!-- Inputfält för namn – lägg till id och aria-label -->
+            <!-- Knapp för att spara namn – id -->
+            <!-- Paragraf för hälsning – id, role="status", aria-live="polite" -->
+        </section>
+
+        <!-- Sektion 3: Hämta fakta med Fetch API -->
+        <section aria-labelledby="faktaRubrik">
+            <h2 id="faktaRubrik">Hämta fakta</h2>
+            <!-- Knapp för att hämta fakta – id, aria-label -->
+            <!-- Paragraf för att visa fakta – id, role="region", aria-live="polite" -->
+        </section>
+
+        <!-- Sektion 4: Bild med alt-text -->
+        <section>
+            <h2>Bild med alt-text</h2>
+            <!-- Infoga bild från https://picsum.photos/200/100?random=1 -->
+            <!-- Alt-text som förklarar att bilden är slumpad -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Sidfot med t.ex. ditt namn eller datum -->
+        <p>&copy; 2025 Avancerad sida</p>
+    </footer>
+
+    <script>
+        // Skapa ruta – hämta knapp, lägg till click-event
+        // I funktionen: skapa div, ge klass "ruta", lägg i rutaContainer
+
+        // Rensa rutor – hämta knapp, lägg till click-event
+        // I funktionen: ta bort alla barn till rutaContainer
+
+        // Spara namn – hämta knapp och inputfält
+        // Vid klick: spara namn i LocalStorage, visa hälsning
+
+        // Visa hälsning – hämta sparat namn från LocalStorage vid sidladdning
+        // Om namn finns: visa texten "Hej, [namn]!" i hälsning-paragrafen
+
+        // Hämta fakta – hämta knapp
+        // Vid klick: använd Fetch API, hämta fakta från API, visa i fakta-paragrafen
+        // URL: https://api.chucknorris.io/jokes/random
+    </script>
+</body>
+
+</html>

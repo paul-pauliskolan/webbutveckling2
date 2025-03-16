@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiv och tillgänglig webbsida – Nivå 2</title>
+    <style>
+        /* Grundstil för layout och text */
+        body {
+            background-color: #ffffff;
+            /* Vit bakgrund – god kontrast */
+            color: #000000;
+            /* Svart text – god kontrast */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        /* Fokusmarkering för tangentbordsanvändare */
+        button:focus,
+        input:focus {
+            outline: 3px solid blue;
+        }
+
+        /* Stil för rutan som skapas med JavaScript */
+        .ruta {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+
+        /* Media query – mobilanpassning */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+                /* Mindre text på mobil */
+            }
+
+            .ruta {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Huvudrubrik -->
+        <h1>Min interaktiva sida</h1>
+    </header>
+
+    <main>
+        <!-- Sektion: Skapa ruta -->
+        <section>
+            <h2>Skapa ruta</h2>
+            <!-- Skapa en knapp med id t.ex. "skapaRuta" -->
+            <!-- Skapa en div med id t.ex. "rutaContainer" där rutan ska läggas -->
+        </section>
+
+        <!-- Sektion: Spara namn med LocalStorage -->
+        <section>
+            <h2>Spara namn</h2>
+            <!-- Inputfält för namn – lägg till id t.ex. "namn" och aria-label -->
+            <!-- Knapp för att spara namnet – ge ett id t.ex. "sparaNamn" -->
+            <!-- Paragraf för att visa hälsning – ge ett id t.ex. "hälsning" -->
+        </section>
+
+        <!-- Sektion: Hämta fakta med Fetch API -->
+        <section>
+            <h2>Hämta fakta</h2>
+            <!-- Skapa en knapp med id t.ex. "hämtaFakta" -->
+            <!-- Paragraf för att visa faktan – ge ett id t.ex. "fakta" -->
+        </section>
+
+        <!-- Sektion: Bild med alt-text -->
+        <section>
+            <h2>Bild med alt-text</h2>
+            <!-- Infoga en bild från https://picsum.photos/200/100?random=1 -->
+            <!-- Lägg till en beskrivande alt-text t.ex. "Slumpmässig bild från Picsum" -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Enkel sidfot -->
+        <p>&copy; 2025 Min webbsida</p>
+    </footer>
+
+    <script>
+        // Skapa ruta – hämta knapp med document.getElementById()
+        // Lägg till en händelselyssnare (click)
+        // I funktionen: skapa ett div-element, lägg till klassen "ruta", lägg till i rutaContainer
+
+        // Spara namn – hämta knapp och inputfält
+        // Vid klick: hämta värdet från input, spara i LocalStorage, visa hälsning
+
+        // Visa hälsning – hämta sparat namn från LocalStorage
+        // Om namn finns: visa texten "Hej, [namn]!" i paragrafen hälsning
+
+        // Hämta fakta – hämta knapp
+        // Vid klick: använd Fetch API för att hämta data från https://api.chucknorris.io/jokes/random
+        // Visa resultatet i paragrafen fakta
+    </script>
+</body>
+
+</html>
