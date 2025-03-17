@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cookie-banner">
+        <p>Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta godkänner du detta.</p>
+        <button onclick="acceptCookies()">Godkänn</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById("cookie-banner").style.display = "none";
+            document.cookie = "cookiesAccepted=true; path=/";
+        }
+    </script>
+
+
+</body>
+
+</html>
