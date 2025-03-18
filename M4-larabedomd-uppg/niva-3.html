@@ -1,0 +1,56 @@
+<!-- Instruktion – Vad eleven ska göra
+Identifiera tre brister:
+
+Inmatning visas med innerHTML – risk för XSS.
+Saknas CSP – ingen kontroll över skadliga skript.
+Stor PNG-bild och onödig animation – hög energiförbrukning.
+Förbättra koden:
+
+Skydda inmatningen med textContent eller filtrering.
+Lägg till CSP i <head> och förklara effekten.
+Optimera bilden med <picture> och WebP.
+Ta bort eller förbättra animationen för hållbarhet.
+Reflektera:
+
+Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen? -->
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiv sida</title>
+</head>
+
+<body>
+    <h1>Användarinteraktion</h1>
+
+    <!-- Osäker visning av inmatning -->
+    <p>Skriv ett meddelande:</p>
+    <input type="text" id="inputMeddelande">
+    <button onclick="visaMeddelande()">Visa</button>
+    <div id="output"></div>
+
+    <script>
+        function visaMeddelande() {
+            let meddelande = document.getElementById("inputMeddelande").value;
+            document.getElementById("output").innerHTML = meddelande; // ❌ XSS-risk
+        }
+    </script>
+
+    <!-- Ooptimerad bild -->
+    <img src="storbild.png" alt="Beskedlig bild" width="1000">
+
+    <!-- Onödig animation -->
+    <script>
+        setInterval(function () {
+            document.body.style.backgroundColor = "rgb(" +
+                Math.floor(Math.random() * 256) + "," +
+                Math.floor(Math.random() * 256) + "," +
+                Math.floor(Math.random() * 256) + ")";
+        }, 500); // ❌ Hög energiförbrukning
+    </script>
+</body>
+
+</html>

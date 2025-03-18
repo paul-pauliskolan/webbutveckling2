@@ -1,0 +1,53 @@
+<!-- Instruktion – Vad eleven ska göra
+Identifiera minst två etiska brister:
+
+Förbockad kryssruta som vilseleder användaren.
+Kommentarer hanteras utan filtrering, risk för XSS.
+Förbättra koden:
+
+Gör kryssrutan frivillig, med tydlig etikett.
+Skydda visningen av kommentarer med textContent eller filtreringsfunktion.
+Kommentera vad du ändrat och varför (HTML: <!-- Förklaring -->, JS: // Förklaring).
+Reflektera kort: Hur har du förbättrat användarens säkerhet och kontroll?
+-->
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyhetsbrev och kommentarer</title>
+</head>
+
+<body>
+    <h1>Välkommen till Nyhetssidan!</h1>
+
+    <!-- Formulär med förbockad kryssruta (Dark Pattern) -->
+    <form action="/registrera" method="post">
+        <label for="email">E-post:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <input type="checkbox" id="nyhetsbrev" name="nyhetsbrev" checked>
+        <label for="nyhetsbrev">Jag vill få reklammejl</label><br>
+
+        <button type="submit">Registrera</button>
+    </form>
+
+    <hr>
+
+    <!-- Kommentarer visas osäkert med innerHTML -->
+    <h2>Lämna en kommentar:</h2>
+    <input type="text" id="kommentar">
+    <button onclick="visaKommentar()">Skicka</button>
+    <p id="visakommentar"></p>
+
+    <script>
+        function visaKommentar() {
+            let kommentar = document.getElementById("kommentar").value;
+            document.getElementById("visakommentar").innerHTML = kommentar; // ❌ Osäker
+        }
+    </script>
+</body>
+
+</html>

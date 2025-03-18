@@ -1,0 +1,36 @@
+<!-- Instruktion – Vad eleven ska förbättra
+Lägg till korrekt alt-text för bilden så att den blir tillgänglig för alla användare.
+Anpassa formuläret för GDPR:
+Användaren ska samtycka till lagring av personuppgifter.
+Användaren ska frivilligt kunna välja om hen vill få nyhetsbrev.
+Använd semantiska HTML-taggar för att förbättra struktur och tillgänglighet.
+Reflektera kort: Hur har dessa ändringar förbättrat tillgänglighet och integritet?
+ -->
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka bord</title>
+</head>
+
+<body>
+    <h1>Boka bord hos Restaurang Solen</h1>
+
+    <!-- Bild saknar alt-text -->
+    <img src="restaurang.jpg">
+
+    <!-- Formulär utan samtycke -->
+    <form action="/skicka" method="post">
+        <label for="namn">Namn:</label>
+        <input type="text" id="namn" name="namn" required><br>
+
+        <label for="email">E-post:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <button type="submit">Skicka</button>
+    </form>
+</body>
+
+</html>
