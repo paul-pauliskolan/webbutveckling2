@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js – Rotation med mus</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+
+<body>
+    <script>
+        // Scen, kamera, renderer
+        const scene = new THREE.Scene()
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+        const renderer = new THREE.WebGLRenderer()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+        document.body.appendChild(renderer.domElement)
+
+        // Lägg till axlar för referens
+        const axesHelper = new THREE.AxesHelper(5)
+        scene.add(axesHelper)
+
+        // Kub
+        const geometry = new THREE.BoxGeometry(1, 1, 1)
+        const texture = new THREE.TextureLoader().load('https://picsum.photos/200')
+        const material = new THREE.MeshBasicMaterial({ map: texture })
+        const cube = new THREE.Mesh(geometry, material)
+        scene.add(cube)
+
+        // Ljus
+        const light = new THREE.PointLight(0xffffff, 1)
+        light.position.set(10, 10, 10)
+        scene.add(light)
+
+        // Kamera
+        camera.position.z = 5
+
+        // OrbitControls (musstyrning)
+        const controls = new THREE.OrbitControls(camera, renderer.domElement)
+        controls.enableDamping = true
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate)
+
+            controls.update() // krävs för mjuk rörelse
+            renderer.render(scene, camera)
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>
